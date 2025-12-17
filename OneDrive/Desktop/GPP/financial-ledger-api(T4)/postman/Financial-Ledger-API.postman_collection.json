@@ -1,0 +1,117 @@
+{
+	"info": {
+		"_postman_id": "94964c8e-adfe-442e-b67d-e58a856c4806",
+		"name": "Financial-Ledger-API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "47462148",
+		"_collection_link": "https://siripurapuswetha05-1124818.postman.co/workspace/Swetha-Siripurapu's-Workspace~a320671b-3ca7-41ef-8336-66a5f8f2dcf5/collection/47462148-94964c8e-adfe-442e-b67d-e58a856c4806?action=share&source=collection_link&creator=47462148"
+	},
+	"item": [
+		{
+			"name": "Create_Account1",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "Create_Account2",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "Deposit Money",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": ""
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Withdraw Money",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": ""
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Transfer Money",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": ""
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "View Ledger",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "GET /accounts/21735213-9d75-4360-afb4-472ba9fca317/ledger",
+					"host": [
+						"GET "
+					],
+					"path": [
+						"accounts",
+						"21735213-9d75-4360-afb4-472ba9fca317",
+						"ledger"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Check Account Balance",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/accounts/21735213-9d75-4360-afb4-472ba9fca317",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"accounts",
+						"21735213-9d75-4360-afb4-472ba9fca317"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
