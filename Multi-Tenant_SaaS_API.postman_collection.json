@@ -1,0 +1,568 @@
+{
+	"info": {
+		"_postman_id": "3d48bf8b-675d-4bc2-9e43-9ba7e46a4377",
+		"name": "Multi-Tenant_SaaS_API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "47462148",
+		"_collection_link": "https://siripurapuswetha05-1124818.postman.co/workspace/Swetha-Siripurapu's-Workspace~a320671b-3ca7-41ef-8336-66a5f8f2dcf5/collection/47462148-3d48bf8b-675d-4bc2-9e43-9ba7e46a4377?action=share&source=collection_link&creator=47462148"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "/*\r\n{\r\n  \"email\": \"Superadmin@demo.com\",\r\n  \"password\": \"super@123\",\r\n  \"tenantSubdomain\": \"demoAd\"\r\n}\r\n*/\r\n{\r\n  \"email\": \"23P31A0556@acet.ac.in,\r\n  \"password\": \"super@123\",\r\n  \"tenantSubdomain\": \"demoAd\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/auth/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Tenant Registration",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": ""
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Current User",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": ""
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Logout",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJlY2I1ODA3Ny01NGYwLTQ0ZjItYWYzZS0zNDg4YmZkNGQ4N2MiLCJ0ZW5hbnRJZCI6IjhhMGVhMDNjLTg1MDgtNGRkYS1iZTc1LThmMzk4NDIwZjk3MyIsInJvbGUiOiJ0ZW5hbnRfYWRtaW4iLCJpYXQiOjE3NjY1NzU5MzQsImV4cCI6MTc2NjY2MjMzNH0.2Na-oPyo1iLrWV9fS4cxdcT82kE7HuUJhsLBNJsp5hI",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/auth/logout",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"auth",
+								"logout"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Tenants",
+			"item": [
+				{
+					"name": "Get Tenant Details",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJlY2I1ODA3Ny01NGYwLTQ0ZjItYWYzZS0zNDg4YmZkNGQ4N2MiLCJ0ZW5hbnRJZCI6IjhhMGVhMDNjLTg1MDgtNGRkYS1iZTc1LThmMzk4NDIwZjk3MyIsInJvbGUiOiJ0ZW5hbnRfYWRtaW4iLCJpYXQiOjE3NjY1NzU5MzQsImV4cCI6MTc2NjY2MjMzNH0.2Na-oPyo1iLrWV9fS4cxdcT82kE7HuUJhsLBNJsp5hI",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/api/tenants/8a0ea03c-8508-4dda-be75-8f398420f973",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"tenants",
+								"8a0ea03c-8508-4dda-be75-8f398420f973"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Tenant",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": ""
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List All Tenants",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiIxNWY3MTBlMS03OGI0LTRlNGQtOTVkOC05NjNlMTM2ZDY5NGEiLCJ0ZW5hbnRJZCI6bnVsbCwicm9sZSI6InN1cGVyX2FkbWluIiwiaWF0IjoxNzY2NTc4NTc3LCJleHAiOjE3NjY2NjQ5Nzd9.yTk9IOkmX4W3vK5RkpyQolG829xgGhuK-T0zekDBDvk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/api/tenants",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"tenants"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Users",
+			"item": [
+				{
+					"name": "Add User to Tenant",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJlY2I1ODA3Ny01NGYwLTQ0ZjItYWYzZS0zNDg4YmZkNGQ4N2MiLCJ0ZW5hbnRJZCI6IjhhMGVhMDNjLTg1MDgtNGRkYS1iZTc1LThmMzk4NDIwZjk3MyIsInJvbGUiOiJ0ZW5hbnRfYWRtaW4iLCJpYXQiOjE3NjY1ODA3MTYsImV4cCI6MTc2NjY2NzExNn0.AzkVsgyWL3SuzoDsN6CkD1T0TozUCiDM7K9G_zp283s",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"email\": \"newuser@demo.com\",\r\n  \"password\": \"NewUser@123\",\r\n  \"fullName\": \"New Demo User\",\r\n  \"role\": \"user\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/tenants/8a0ea03c-8508-4dda-be75-8f398420f973/users",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"tenants",
+								"8a0ea03c-8508-4dda-be75-8f398420f973",
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List Tenant Users",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": ""
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update User",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": ""
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete User",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": ""
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Projects",
+			"item": [
+				{
+					"name": "Create Project",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJlY2I1ODA3Ny01NGYwLTQ0ZjItYWYzZS0zNDg4YmZkNGQ4N2MiLCJ0ZW5hbnRJZCI6IjhhMGVhMDNjLTg1MDgtNGRkYS1iZTc1LThmMzk4NDIwZjk3MyIsInJvbGUiOiJ0ZW5hbnRfYWRtaW4iLCJpYXQiOjE3NjY1ODQ0ODIsImV4cCI6MTc2NjY3MDg4Mn0.5EgVpPdUoLf8UorEJC9T_X3LwJ1CVldQUDmwAU8MH0s",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"Website Redesign Project\",\r\n  \"description\": \"Complete redesign of company website\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/projects",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"projects"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List Projects",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJlY2I1ODA3Ny01NGYwLTQ0ZjItYWYzZS0zNDg4YmZkNGQ4N2MiLCJ0ZW5hbnRJZCI6IjhhMGVhMDNjLTg1MDgtNGRkYS1iZTc1LThmMzk4NDIwZjk3MyIsInJvbGUiOiJ0ZW5hbnRfYWRtaW4iLCJpYXQiOjE3NjY1ODQ0ODIsImV4cCI6MTc2NjY3MDg4Mn0.5EgVpPdUoLf8UorEJC9T_X3LwJ1CVldQUDmwAU8MH0s",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"Website Redesign Project\",\r\n  \"description\": \"Complete redesign of company website\"\r\n}\r\n"
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/projects",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"projects"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Project",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": ""
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update project",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJlY2I1ODA3Ny01NGYwLTQ0ZjItYWYzZS0zNDg4YmZkNGQ4N2MiLCJ0ZW5hbnRJZCI6IjhhMGVhMDNjLTg1MDgtNGRkYS1iZTc1LThmMzk4NDIwZjk3MyIsInJvbGUiOiJ0ZW5hbnRfYWRtaW4iLCJpYXQiOjE3NjY1ODYxNzksImV4cCI6MTc2NjY3MjU3OX0.JXNnVFR5doC6vgHuJaACzAEYgBVdRQ7BaLA-ikgZnQc",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"Updated Project Name\",\r\n  \"description\": \"Updated description\",\r\n  \"status\": \"archived\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/projects/ae888c0b-5f02-490a-ab43-1c8b729cdd91",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"projects",
+								"ae888c0b-5f02-490a-ab43-1c8b729cdd91"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Tasks",
+			"item": [
+				{
+					"name": "Create Task",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJlY2I1ODA3Ny01NGYwLTQ0ZjItYWYzZS0zNDg4YmZkNGQ4N2MiLCJ0ZW5hbnRJZCI6IjhhMGVhMDNjLTg1MDgtNGRkYS1iZTc1LThmMzk4NDIwZjk3MyIsInJvbGUiOiJ0ZW5hbnRfYWRtaW4iLCJpYXQiOjE3NjY1ODcxMDcsImV4cCI6MTc2NjY3MzUwN30.AF3_LVZW-fstZQvtTBaTL8cZZkfgGp__3i6TwJJo9iU",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"title\": \"Design homepage mockup\",\r\n  \"description\": \"Create high-fidelity design\",\r\n  \"assignedTo\": \"5e961d22-dd99-48df-82d3-4a6fa065f53b\",\r\n  \"priority\": \"high\",\r\n  \"dueDate\": \"2024-07-15\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/projects/5cf34cb5-fee4-45ed-9f70-e6adad506ffc/tasks",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"projects",
+								"5cf34cb5-fee4-45ed-9f70-e6adad506ffc",
+								"tasks"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List Project Tasks",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": ""
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Task",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": ""
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Task Status",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJlY2I1ODA3Ny01NGYwLTQ0ZjItYWYzZS0zNDg4YmZkNGQ4N2MiLCJ0ZW5hbnRJZCI6IjhhMGVhMDNjLTg1MDgtNGRkYS1iZTc1LThmMzk4NDIwZjk3MyIsInJvbGUiOiJ0ZW5hbnRfYWRtaW4iLCJpYXQiOjE3NjY1ODcxMDcsImV4cCI6MTc2NjY3MzUwN30.AF3_LVZW-fstZQvtTBaTL8cZZkfgGp__3i6TwJJo9iU",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"status\": \"completed\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/tasks/560fa27d-826a-48ee-b7c1-2c1844bb825e/status",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"tasks",
+								"560fa27d-826a-48ee-b7c1-2c1844bb825e",
+								"status"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
