@@ -1,0 +1,13 @@
+{
+  "projectName": "Multi-Tenant SaaS Application",
+  "studentName": "Swetha Siripurapu",
+  "studentId": "23P31A0556",
+  "technologyStack": {
+    "frontend": "React",
+    "backend": "Node.js + Express",
+    "database": "PostgreSQL",
+    "containerization": "Docker"
+  },
+  "repository": "https://github.com/Swetha-svvv/multi-tenant-saas.git",
+  "deployment": "Local Docker Compose"
+}
