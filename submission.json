@@ -1,13 +1,37 @@
 {
-  "projectName": "Multi-Tenant SaaS Application",
-  "studentName": "Swetha Siripurapu",
-  "studentId": "23P31A0556",
-  "technologyStack": {
-    "frontend": "React",
-    "backend": "Node.js + Express",
-    "database": "PostgreSQL",
-    "containerization": "Docker"
-  },
-  "repository": "https://github.com/Swetha-svvv/multi-tenant-saas.git",
-  "deployment": "Local Docker Compose"
+  "projectName": "multi-tenant-saas",
+  "testCredentials": {
+    "superAdmin": {
+      "email": "superadmin@demo.com",
+      "password": "Admin@123"
+    },
+    "tenants": [
+      {
+        "tenantName": "Aditya College Of Engineering And Technology",
+        "tenantSubdomain": "demo",
+        "tenantAdmin": {
+          "email": "23P31A0556@acet.ac.in",
+          "password": "1"
+        },
+        "users": [
+          {
+            "email": "user1@demo.com",
+            "password": "User@123",
+            "role": "user"
+          }
+        ],
+        "projects": [
+          {
+            "name": "Website Redesign Project",
+            "tasks": [
+              {
+                "title": "Design Landing Page",
+                "status": "pending"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
 }
